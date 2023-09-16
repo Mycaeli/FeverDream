@@ -6311,6 +6311,7 @@ GameObject:
   - component: {fileID: 999037596}
   - component: {fileID: 999037595}
   - component: {fileID: 999037594}
+  - component: {fileID: 999037599}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -6369,7 +6370,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 44484ce9e8d1f90479abca9c377b9a1c, type: 2}
+  - {fileID: 2100000, guid: a52d1fe73b765a94ca639a7c17a732cb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6414,6 +6416,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &999037599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999037593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71e0eca2cc6830748abae96f9c6f3260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  escenaSiguienteIndex: 3
 --- !u!1001 &1008565658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12311,37 +12326,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 457436, guid: 5f36e28336539d6438373899483b788d, type: 3}
   m_PrefabInstance: {fileID: 1985056071}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2001332684
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2001332685}
-  m_Layer: 0
-  m_Name: DollyCart1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2001332685
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001332684}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.84, y: -2.8640137, z: -14.914082}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2008087699
 PrefabInstance:
   m_ObjectHideFlags: 0
