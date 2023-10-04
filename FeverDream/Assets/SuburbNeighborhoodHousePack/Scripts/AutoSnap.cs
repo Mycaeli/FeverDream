@@ -1,8 +1,7 @@
 using UnityEngine; 
 using UnityEditor;
 
-
-public class AutoSnap: EditorWindow
+public class AutoSnap : EditorWindow
 {
 	private Vector3 prevPosition;
 	private Vector3 prevScale;
@@ -30,7 +29,7 @@ public class AutoSnap: EditorWindow
 	private const string snapValueZKey        = "AutoSnap_snapValueZKey";
 	private const string snapRotateValueKey = "AutoSnap_snapRotateValueKey";
 
-	//[MenuItem( "Edit/Auto Snap %_l" )]
+	[MenuItem( "Edit/Auto Snap %_l" )]
 
 	static void Init()
 	{

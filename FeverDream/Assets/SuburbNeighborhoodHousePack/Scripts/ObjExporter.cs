@@ -72,13 +72,13 @@ public class ObjExporterScript
 
 public class ObjExporter : ScriptableObject
 {
-	//[MenuItem ("File/Export/Wavefront OBJ")]
+	[MenuItem ("File/Export/Wavefront OBJ")]
 	static void DoExportWSubmeshes()
 	{
 		DoExport(true);
 	}
 
-	//[MenuItem ("File/Export/Wavefront OBJ (No Submeshes)")]
+	[MenuItem ("File/Export/Wavefront OBJ (No Submeshes)")]
 	static void DoExportWOSubmeshes()
 	{
 		DoExport(false);
