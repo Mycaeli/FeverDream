@@ -77,7 +77,8 @@ Material:
     - _Rotation: 0
     - _SrcBlend: 1
     - _SunDisk: 2
-    - _SunSize: 0.04
+    - _SunSize: 0
+    - _SunSizeConvergence: 7.99
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
