@@ -34,7 +34,7 @@ public class Pendulum : MonoBehaviour
 
         // Calcula el ángulo inicial basado en la posición inicial con respecto al centro
         Vector3 dirToCenter = center.position - transform.position;
-        initialAngle = Mathf.Atan2(dirToCenter.z, dirToCenter.y) * Mathf.Rad2Deg;
+        initialAngle = Mathf.Atan2(dirToCenter.x, dirToCenter.z) * Mathf.Rad2Deg;
 
         // Invierte la dirección de rotación al inicio
         reverseRotation = true;
@@ -53,6 +53,7 @@ public class Pendulum : MonoBehaviour
         // Calcula el ángulo actual basado en el tiempo y la velocidad de rotación
         float currentAngle = Mathf.Sin(Time.time * rotationSpeed) * maxRotationAngle;
 
+
         if (Mathf.Abs(currentAngle) >= maxRotationAngle)
         {
             // Cambia la dirección de rotación al llegar al límite del ángulo
@@ -67,7 +68,9 @@ public class Pendulum : MonoBehaviour
 
         // Calcula la nueva posición del objeto en el eje X
         float angleInRadians = (initialAngle + currentAngle) * Mathf.Deg2Rad;
-        Vector3 offset = new Vector3(0f, Mathf.Sin(angleInRadians) * distance, Mathf.Cos(angleInRadians) * distance);
+        Vector3 offset = new Vector3(Mathf.Cos(angleInRadians) * distance, Mathf.Sin(angleInRadians) * distance, 0f);
+
+
 
         // Establece la posición del objeto basado en el centro y el offset
         transform.position = center.position + offset;
