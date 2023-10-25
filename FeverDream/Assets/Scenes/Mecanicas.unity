@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00066579843, g: 0.00086654566, b: 0.4194915, a: 1}
+  m_IndirectSpecularColor: {r: 0.0007200976, g: 0.0008675759, b: 0.419518, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6488,7 +6488,7 @@ GameObject:
   - component: {fileID: 1020243054}
   - component: {fileID: 1020243053}
   m_Layer: 0
-  m_Name: Capsule (4)
+  m_Name: Luces
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8151,10 +8151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d386194f85baeb46a11a143a38855e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionText: {fileID: 1804793084}
-  interactionDuration: 5
-  interactionTimer: 0
-  canInteract: 1
 --- !u!136 &1203482049
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12162,7 +12158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896ef004d0de9b64d877993f851c0d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  COM: COM8
+  COM: COM4
 --- !u!4 &1744762570
 Transform:
   m_ObjectHideFlags: 0
