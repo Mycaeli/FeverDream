@@ -24,7 +24,9 @@ public class Pendulum : MonoBehaviour
     public GameObject objectsAnuncio;
 
     public AudioSource audioSource; // Asigna el objeto AudioSource en el Inspector
-    public AudioClip audioClip; // Asigna el audio que deseas reproducir en el Inspector
+    public AudioClip audioClip;
+    private bool opened;
+    // Asigna el audio que deseas reproducir en el Inspector
 
 
     void Start()
@@ -38,8 +40,10 @@ public class Pendulum : MonoBehaviour
 
         // Invierte la dirección de rotación al inicio
         reverseRotation = true;
+        opened = false;
 
-        
+
+
     }
 
     void Update()
@@ -147,7 +151,8 @@ public class Pendulum : MonoBehaviour
         // Desactiva el objeto "door" si existe
         if (door != null)
         {
-            door.SetActive(false);
+            door.GetComponent<Animation>().Play("DoorOpen");
+            opened = true;
             objectsToDisable.SetActive(false);
             objectsAnuncio.SetActive(false);
         }
