@@ -6392,9 +6392,11 @@ MonoBehaviour:
   - {fileID: 1391741033}
   - {fileID: 522541836}
   - {fileID: 1053015724}
+  lamp: {fileID: 0}
   areLightsOn: 0
   texto1: Apagar
   texto2: Encender
+  sharedLightMaterial: {fileID: 0}
 --- !u!136 &1012095733
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6509,9 +6511,11 @@ MonoBehaviour:
   targetLights:
   - {fileID: 1391741033}
   - {fileID: 522541836}
+  lamp: {fileID: 0}
   areLightsOn: 1
   texto1: Apagar
   texto2: Encender
+  sharedLightMaterial: {fileID: 0}
 --- !u!136 &1020243054
 CapsuleCollider:
   m_ObjectHideFlags: 0

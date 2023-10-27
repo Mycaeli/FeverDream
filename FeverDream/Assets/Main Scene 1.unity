@@ -8747,6 +8747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedFlowchart: {fileID: 0}
 --- !u!4 &160476125
 Transform:
   m_ObjectHideFlags: 1
@@ -14664,7 +14665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &281748111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14699,9 +14700,11 @@ MonoBehaviour:
   - {fileID: 816642948}
   - {fileID: 941763848}
   - {fileID: 796692251}
+  lamp: {fileID: 1638786320}
   areLightsOn: 1
   texto1: Apagar
   texto2: Encender
+  sharedLightMaterial: {fileID: 0}
 --- !u!136 &281748112
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14774,7 +14777,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281748110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.59, y: 4.423, z: -30.59}
+  m_LocalPosition: {x: 44.082, y: 4.423, z: -30.59}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30796,6 +30799,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rope (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5074512353664290214, guid: bea0f3db3026cac4e8364f4428f9fb5d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4af442e65a88b65449def86913960fbf, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bea0f3db3026cac4e8364f4428f9fb5d, type: 3}
 --- !u!1 &571297292 stripped
@@ -40076,11 +40083,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758094349}
   m_Mesh: {fileID: 4300000, guid: efb0c22d22bd4cc4abcd7439dfab913b, type: 3}
---- !u!4 &758528227 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-  m_PrefabInstance: {fileID: 1876742045}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &758913144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40364,6 +40366,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760770543}
   m_CullTransparentMesh: 1
+--- !u!4 &761038122 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+  m_PrefabInstance: {fileID: 1876742045}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &763941006
 GameObject:
   m_ObjectHideFlags: 0
@@ -62572,6 +62579,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rope
       objectReference: {fileID: 0}
+    - target: {fileID: 5074512353664290214, guid: bea0f3db3026cac4e8364f4428f9fb5d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7dacf12c271b6244a8d4269d08dc7d66, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bea0f3db3026cac4e8364f4428f9fb5d, type: 3}
 --- !u!1 &1150196661 stripped
@@ -88693,6 +88704,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 472234, guid: 3531fcc8ded8e6843a915e75fe40b8d7, type: 3}
   m_PrefabInstance: {fileID: 1638191767}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1638786320 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2412437761621262060, guid: 0b7bad6986d2a5e4fb0e95141a18059f, type: 3}
+  m_PrefabInstance: {fileID: 2412437760982118200}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1639312466 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 457562, guid: 23c3f2f3c3e60ba4282b28245dd1ddd8, type: 3}
@@ -91259,14 +91275,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1678529955}
-  m_LocalRotation: {x: -0, y: -0.010363728, z: -0, w: 0.99994636}
-  m_LocalPosition: {x: -0.019198373, y: 0.403, z: -0.44551197}
-  m_LocalScale: {x: 0.7879, y: 3.5258, z: 0.64962006}
+  m_LocalRotation: {x: -0.09370854, y: -0.010317881, z: -0.003140649, w: 0.9955412}
+  m_LocalPosition: {x: -0.026284277, y: -0.3561623, z: -0.2841044}
+  m_LocalScale: {x: 0.7879, y: 3.5258, z: 0.64962}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 758528227}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -1.188, z: 0}
+  m_Father: {fileID: 761038122}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -10.757, y: -1.164, z: -0.252}
 --- !u!108 &1678529957
 Light:
   m_ObjectHideFlags: 0
@@ -98566,6 +98582,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rope (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5074512353664290214, guid: bea0f3db3026cac4e8364f4428f9fb5d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c8f85d71ca2e564c8627743ba41a101, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bea0f3db3026cac4e8364f4428f9fb5d, type: 3}
 --- !u!1 &1829927717 stripped
@@ -101335,7 +101355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_JumpSpeed
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_UseFovKick
@@ -101351,7 +101371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 14300000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_Height
-      value: 1.5
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 14300000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_Radius
