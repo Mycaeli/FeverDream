@@ -17,6 +17,28 @@ public class Lights2 : MonoBehaviour, II
         targetLight.enabled = isLightOn;
     }
 
+    void Update()
+    {
+        // Comprueba si se ha hecho clic izquierdo y si el objeto está lo suficientemente cerca
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject)
+            {
+                Interact(); // Llama al método Interact cuando se hace clic en la linterna
+            }
+        }
+
+        // Verifica si se presiona la tecla "L" para cambiar el estado de la luz
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            isLightOn = !isLightOn;
+            targetLight.enabled = isLightOn;
+        }
+    }
+
     public string GetDescription()
     {
         if (isLightOn)
@@ -53,14 +75,5 @@ public class Lights2 : MonoBehaviour, II
             transform.position = newPosition;
         }
     }
-
-    void Update()
-    {
-        // Verifica si se presiona la tecla "L" para cambiar el estado de la luz
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            isLightOn = !isLightOn;
-            targetLight.enabled = isLightOn;
-        }
-    }
 }
+

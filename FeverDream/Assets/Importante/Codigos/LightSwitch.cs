@@ -9,6 +9,21 @@ public class LightSwitch : MonoBehaviour, II
     public string texto1 = "Apagar";
     public string texto2 = "Encender";
 
+    void Update()
+    {
+        // Comprueba si se ha hecho clic izquierdo y si el objeto está lo suficientemente cerca
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject)
+            {
+                Interact(); // Llama al método Interact cuando se hace clic en el interruptor
+            }
+        }
+    }
+
     public string GetDescription()
     {
         if (areLightsOn)
@@ -35,3 +50,4 @@ public class LightSwitch : MonoBehaviour, II
         Destroy(gameObject);
     }
 }
+
