@@ -11100,7 +11100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLight: {fileID: 1678529957}
   isLightOn: 0
-  texto1: Encender Linterna
+  texto1: Tomar Linterna
   texto2: Encender
 --- !u!136 &206267375
 CapsuleCollider:
@@ -11174,7 +11174,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206267373}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.41, y: 0.94, z: -19.16}
+  m_LocalPosition: {x: 45.67, y: 4.53, z: -30.64}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14664,7 +14664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &281748111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14774,7 +14774,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281748110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.125, y: 1.036, z: -19.6}
+  m_LocalPosition: {x: 45.59, y: 4.423, z: -30.59}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21282,7 +21282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 002f54d530922d141b17d1b2eeaf139d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetoAActivarDesactivar: {fileID: 0}
+  objetoAActivarDesactivar: {fileID: 612192471}
   objeto1Rigidbody: {fileID: 1025754204}
 --- !u!54 &402172991
 Rigidbody:
@@ -86755,7 +86755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 280b4d545b94b314a8342b3cb77c8fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetoAActivarDesactivar: {fileID: 0}
+  objetoAActivarDesactivar: {fileID: 512148541}
   objeto1Rigidbody: {fileID: 376465749}
 --- !u!54 &1598936545
 Rigidbody:
@@ -100916,7 +100916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff62f22ded7e3f4fb5444d49b0d5353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetoAActivarDesactivar: {fileID: 0}
+  objetoAActivarDesactivar: {fileID: 89646164}
   objeto1Rigidbody: {fileID: 452154270}
 --- !u!54 &1873721019
 Rigidbody:

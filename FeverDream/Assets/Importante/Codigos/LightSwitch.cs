@@ -13,6 +13,21 @@ public class LightSwitch : MonoBehaviour, II
 
     //private Renderer renderer; // Reference to the Renderer component
 
+    void Update()
+    {
+        // Comprueba si se ha hecho clic izquierdo y si el objeto está lo suficientemente cerca
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject)
+            {
+                Interact(); // Llama al método Interact cuando se hace clic en el interruptor
+            }
+        }
+    }
+
     public string GetDescription()
     {
         if (areLightsOn)
