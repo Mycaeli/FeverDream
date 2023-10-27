@@ -6,11 +6,10 @@ using UnityEngine;
 public class LightSwitch : MonoBehaviour, II
 {
     public List<Light> targetLights; // List of lights to turn on or off
-    public Object lamp;
     public bool areLightsOn = false; // Initialize lights as off
     public string texto1 = "Turn Off";
     public string texto2 = "Turn On";
-    public Material sharedLightMaterial; // Declare the shared material variable
+    public Material lampMaterial; // Declare the shared material variable
 
     //private Renderer renderer; // Reference to the Renderer component
 
@@ -36,20 +35,30 @@ public class LightSwitch : MonoBehaviour, II
             light.enabled = areLightsOn;
         }
 
-            Renderer lampRenderer = lamp.GetComponent<Renderer>();
+        //Renderer lampRenderer = lamp.GetComponent<Renderer>();
 
-            // Check if the lamp has a Renderer component
-            if (lampRenderer != null)
+        // Check if the lamp has a Renderer component
+        if (lampMaterial != null)
+        {
+            //Material lampMaterial = lampRenderer.sharedMaterial;
+            if (areLightsOn)
             {
-                Material lampMaterial = lampRenderer.sharedMaterial;
+                // When the lights are turned on, you can set the material properties as needed.
+                lampMaterial.EnableKeyword("_EMISSION");
+                lampMaterial.SetColor("_EmissionColor", Color.white); // Set your desired emission color
+            }
+            else
+            {
+                // When the lights are turned off, you can disable the emission effect.
                 lampMaterial.DisableKeyword("_EMISSION");
                 lampMaterial.SetColor("_EmissionColor", Color.black);
-
             }
+        }
 
         // Destroy the object after interaction
         Destroy(gameObject);
     }
+
 
 }
 
