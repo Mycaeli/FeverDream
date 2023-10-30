@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12248794, g: 0.14222383, b: 0.17196622, a: 1}
+  m_IndirectSpecularColor: {r: 0.12248806, g: 0.1422241, b: 0.17196658, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8752,6 +8752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedFlowchart: {fileID: 0}
 --- !u!4 &160476125
 Transform:
   m_ObjectHideFlags: 1
@@ -14419,6 +14420,7 @@ MonoBehaviour:
   areLightsOn: 1
   texto1: Apagar
   texto2: Encender
+  lampMaterial: {fileID: 2100000, guid: bcff750732c6d724f91505da985e180b, type: 2}
 --- !u!136 &281748112
 CapsuleCollider:
   m_ObjectHideFlags: 0
