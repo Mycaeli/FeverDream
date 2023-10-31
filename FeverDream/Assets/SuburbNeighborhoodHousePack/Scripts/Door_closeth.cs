@@ -3,17 +3,16 @@ using System.Collections;
 
 public class Door_closeth : MonoBehaviour
 {
-    private float distance;
-    private GameObject player;
     private bool isMoving;
     private bool isOpen;
     private Quaternion startRotation;
     private Quaternion endRotation;
     public float rotationSpeed = 90.0f; // Adjust the rotation speed as needed
+    public float rayLength = 2.0f;
+
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         isMoving = false;
         isOpen = false;
 
@@ -23,19 +22,26 @@ public class Door_closeth : MonoBehaviour
 
     void Update()
     {
-        distance = Vector3.Distance(transform.position, player.transform.position);
-
-        if (!isMoving && Input.GetButtonDown("Fire1") && distance < 2)
+        if (!isMoving)
         {
-            if (isOpen)
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, rayLength))
             {
-                // If the door is open, close it
-                isMoving = true;
-            }
-            else
-            {
-                // If the door is closed, open it
-                isMoving = true;
+                if (hit.collider.gameObject == gameObject && Input.GetButtonDown("Fire1"))
+                {
+                    if (isOpen)
+                    {
+                        // If the door is open, close it
+                        isMoving = true;
+                    }
+                    else
+                    {
+                        // If the door is closed, open it
+                        isMoving = true;
+                    }
+                }
             }
         }
 

@@ -1,3 +1,4 @@
+using MoonSharp.Interpreter;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,7 @@ public class Pendulum : MonoBehaviour
     public float timer = 0f;
     private bool isCounting = false;
 
-    public GameObject door; // Referencia al objeto "door"
+    public Door door; // Referencia al objeto "door"
     private GameObject pickLock; // Referencia al objeto "pick lock"
     public GameObject objectsToDisable;
     public GameObject objectsAnuncio;
@@ -123,8 +124,6 @@ public class Pendulum : MonoBehaviour
     }
 
 
-
-
     private IEnumerator DesactivarDespuesDeEsperar()
     {
         // Espera 1 segundo
@@ -155,6 +154,7 @@ public class Pendulum : MonoBehaviour
             opened = true;
             objectsToDisable.SetActive(false);
             objectsAnuncio.SetActive(false);
+            door.operative = true;
         }
 
         // Desactiva el objeto "pick lock" si existe

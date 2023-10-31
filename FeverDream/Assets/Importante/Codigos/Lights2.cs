@@ -10,6 +10,7 @@ public class Lights2 : MonoBehaviour, II
     public string texto2 = "Apagar Linterna";
 
     private bool isObjectHidden = false; // Controla si el objeto está oculto
+    public bool hasBeenInteracted = false; // Flag to track if the object has been interacted with
 
     void Start()
     {
@@ -19,7 +20,14 @@ public class Lights2 : MonoBehaviour, II
 
     void Update()
     {
-        // Comprueba si se ha hecho clic izquierdo y si el objeto está lo suficientemente cerca
+        // Check if the object has been interacted with before allowing "L" key to toggle the light
+        if (hasBeenInteracted && Input.GetKeyDown(KeyCode.L))
+        {
+            isLightOn = !isLightOn;
+            targetLight.enabled = isLightOn;
+        }
+
+        // Check for left mouse click and object proximity
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -27,15 +35,8 @@ public class Lights2 : MonoBehaviour, II
 
             if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject)
             {
-                Interact(); // Llama al método Interact cuando se hace clic en la linterna
+                Interact(); // Call the Interact method when clicking on the flashlight
             }
-        }
-
-        // Verifica si se presiona la tecla "L" para cambiar el estado de la luz
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            isLightOn = !isLightOn;
-            targetLight.enabled = isLightOn;
         }
     }
 
@@ -53,25 +54,28 @@ public class Lights2 : MonoBehaviour, II
 
     public void Interact()
     {
-        // Cambia el estado de la luz y actualiza su descripción
+        // Change the state of the light and update its description
         isLightOn = !isLightOn;
         targetLight.enabled = isLightOn;
 
-        // Cambia el estado del objeto
+        // Change the state of the object
         isObjectHidden = !isObjectHidden;
 
         if (isObjectHidden)
         {
-            // Mueve el objeto debajo del suelo (ajusta la posición Y según tu escenario)
+            // Move the object below the ground (adjust the Y position based on your scenario)
             Vector3 newPosition = transform.position;
-            newPosition.y = -10f; // Ajusta esta posición a la profundidad deseada
+            newPosition.y = -10f; // Adjust this position to the desired depth
             transform.position = newPosition;
+
+            // Set the flag to indicate that the object has been interacted with
+            hasBeenInteracted = true;
         }
         else
         {
-            // Devuelve el objeto a su posición original (ajusta la posición Y)
+            // Return the object to its original position (adjust the Y position)
             Vector3 newPosition = transform.position;
-            newPosition.y = 0f; // Ajusta esta posición a la altura original
+            newPosition.y = 0f; // Adjust this position to the original height
             transform.position = newPosition;
         }
     }
