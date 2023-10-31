@@ -32,6 +32,9 @@ namespace Fungus
         [Tooltip("Delay between consecutive clicks. Useful to prevent accidentally clicking through story.")]
         [SerializeField] protected float nextClickDelay = 0f;
 
+        [Tooltip("Key to advance story")]
+        [SerializeField] protected KeyCode advanceKey = KeyCode.Space;
+
         [Tooltip("Allow holding Cancel to fast forward text")]
         [SerializeField] protected bool cancelEnabled = true;
 
@@ -109,6 +112,14 @@ namespace Fungus
                     (cancelEnabled && Input.GetButton(currentStandaloneInputModule.cancelButton)))
                 {
                     SetNextLineFlag();
+                }
+
+                if (writer.IsWriting)
+                {
+                    if (Input.GetKeyDown(advanceKey) || (cancelEnabled && Input.GetButton("Cancel")))
+                    {
+                        SetNextLineFlag();
+                    }
                 }
             }
 #endif
