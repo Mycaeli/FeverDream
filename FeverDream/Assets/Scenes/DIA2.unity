@@ -11157,6 +11157,7 @@ MonoBehaviour:
   isLightOn: 0
   texto1: Encender Linterna
   texto2: Encender
+  hasBeenInteracted: 0
 --- !u!136 &206267375
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14841,11 +14842,10 @@ MonoBehaviour:
   - {fileID: 816642948}
   - {fileID: 941763848}
   - {fileID: 796692251}
-  lamp: {fileID: 0}
   areLightsOn: 1
   texto1: Apagar
   texto2: Encender
-  sharedLightMaterial: {fileID: 0}
+  lampMaterial: {fileID: 0}
 --- !u!136 &281748112
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -75840,7 +75840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896ef004d0de9b64d877993f851c0d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  COM: COM8
+  comPortNames: []
 --- !u!4 &1428947263
 Transform:
   m_ObjectHideFlags: 0
@@ -92121,7 +92121,7 @@ GameObject:
   - component: {fileID: 1733146293}
   - component: {fileID: 1733146292}
   m_Layer: 0
-  m_Name: Open
+  m_Name: Llave puerta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
