@@ -39,7 +39,7 @@ public class ToggleGravity1 : MonoBehaviour
     {
         if (!isDisabled) // Verificar si el objeto no está desactivado permanentemente
         {
-            if (isGravityEnabled && Input.GetKeyDown(KeyCode.Alpha1))
+            if (isGravityEnabled && Input.GetKeyDown(KeyCode.E))
             {
                 objeto1Rigidbody.isKinematic = true;
                 objeto1Rigidbody.useGravity = false;
@@ -49,7 +49,7 @@ public class ToggleGravity1 : MonoBehaviour
                 objetoAActivarDesactivar.SetActive(false);
                 isDisabled = true;
             }
-            else if (!isGravityEnabled && Input.GetKeyDown(KeyCode.Alpha1))
+            else if (!isGravityEnabled && Input.GetKeyDown(KeyCode.E))
             {
                 objeto1Rigidbody.isKinematic = false;
                 objeto1Rigidbody.useGravity = true;

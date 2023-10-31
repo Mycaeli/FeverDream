@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI; // Add this line to access the UI Image
 
 public class Key : MonoBehaviour, II
 {
     public GameObject objectToActivate;
     public GameObject Aviso;
     public GameObject objectToDeactivate;
+
+    public Image keyUI; // Reference to the UI image
 
     public string GetDescription()
     {
@@ -43,12 +46,14 @@ public class Key : MonoBehaviour, II
             }
         }
 
+        // Activate the UI image when the key is picked up
+        if (keyUI != null)
+        {
+            keyUI.gameObject.SetActive(true);
+        }
+
         // Desactiva y luego destruye la llave de la escena después de 1 segundo
         gameObject.SetActive(false);
         Destroy(gameObject, 1f);
     }
 }
-
-
-
-

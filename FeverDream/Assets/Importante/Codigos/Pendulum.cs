@@ -150,7 +150,7 @@ public class Pendulum : MonoBehaviour
         // Desactiva el objeto "door" si existe
         if (door != null)
         {
-            door.GetComponent<Animation>().Play("DoorOpen");
+            //door.GetComponent<Animation>().Play("DoorOpen");
             opened = true;
             objectsToDisable.SetActive(false);
             objectsAnuncio.SetActive(false);
