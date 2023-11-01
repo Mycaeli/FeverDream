@@ -9,6 +9,8 @@ TagManager:
   - Door
   - Closeth
   - Cabinet
+  - Dad
+  - Cable
   layers:
   - Default
   - TransparentFX

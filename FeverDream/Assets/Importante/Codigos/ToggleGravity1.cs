@@ -5,17 +5,20 @@ using UnityEngine;
 public class ToggleGravity1 : MonoBehaviour
 {
     private bool isGravityEnabled = false;
-    private bool isDisabled = false; // Variable para rastrear si el objeto está desactivado permanentemente
+    private bool isDisabled = false;
     public GameObject objetoAActivarDesactivar;
-    public Rigidbody objeto1Rigidbody; // Referencia al Rigidbody del objeto 1
+    public GameObject correspondingObject; // Reference to the corresponding object
+
+    private Rigidbody objetoRigidbody; // Reference to the Rigidbody of the game object
 
     private void Start()
     {
-        // Asegúrate de que objeto1Rigidbody esté asignado en el Inspector.
-        if (objeto1Rigidbody == null)
+        objetoRigidbody = GetComponent<Rigidbody>(); // Get the Rigidbody component from the game object
+
+        if (objetoRigidbody == null)
         {
-            Debug.LogError("No se ha asignado el Rigidbody del objeto 1 en el Inspector.");
-            enabled = false; // Deshabilita el script si no se asigna el Rigidbody.
+            Debug.LogError("No se ha encontrado el componente Rigidbody en el objeto.");
+            enabled = false;
         }
     }
 
@@ -23,7 +26,10 @@ public class ToggleGravity1 : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            objetoAActivarDesactivar.SetActive(true);
+            if (correspondingObject != null && gameObject == correspondingObject)
+            {
+                objetoAActivarDesactivar.SetActive(true);
+            }
         }
     }
 
@@ -31,32 +37,40 @@ public class ToggleGravity1 : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            objetoAActivarDesactivar.SetActive(false);
+            if (correspondingObject != null && gameObject == correspondingObject)
+            {
+                objetoAActivarDesactivar.SetActive(false);
+            }
         }
     }
 
     private void Update()
     {
-        if (!isDisabled) // Verificar si el objeto no está desactivado permanentemente
+        if (objetoAActivarDesactivar != null)
         {
-            if (isGravityEnabled && Input.GetKeyDown(KeyCode.E))
+            if (!isDisabled)
             {
-                objeto1Rigidbody.isKinematic = true;
-                objeto1Rigidbody.useGravity = false;
-                isGravityEnabled = false;
+                if (isGravityEnabled && Input.GetKeyDown(KeyCode.E))
+                {
+                    objetoRigidbody.isKinematic = true;
+                    objetoRigidbody.useGravity = false;
+                    isGravityEnabled = false;
 
-                // Desactiva permanentemente el objeto
-                objetoAActivarDesactivar.SetActive(false);
-                isDisabled = true;
-            }
-            else if (!isGravityEnabled && Input.GetKeyDown(KeyCode.E))
-            {
-                objeto1Rigidbody.isKinematic = false;
-                objeto1Rigidbody.useGravity = true;
-                isGravityEnabled = true;
+                    if (correspondingObject != null && gameObject == correspondingObject)
+                    {
+                        objetoAActivarDesactivar.SetActive(false);
+                    }
+                }
+                else if (!isGravityEnabled && Input.GetKeyDown(KeyCode.E))
+                {
+                    objetoRigidbody.isKinematic = false;
+                    objetoRigidbody.useGravity = true;
+                    isGravityEnabled = true;
+                }
             }
         }
     }
 }
+
 
 
