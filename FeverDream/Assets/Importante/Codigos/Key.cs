@@ -42,6 +42,7 @@ public class Key : MonoBehaviour, II
             Aviso.SetActive(false);
             if (objectToDeactivate != null)
             {
+                Aviso.SetActive(false);
                 objectToDeactivate.SetActive(false);
             }
         }

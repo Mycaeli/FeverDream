@@ -40,8 +40,8 @@ public class Pills : MonoBehaviour, II
         // Desactiva y destruye el objeto a desactivar
         if (objectToDeactivate != null)
         {
-            objectToDeactivate.SetActive(false);
-            Destroy(objectToDeactivate);
+            objectToDeactivate.SetActive(true);
+            
         }
 
         isInteracted = true; // El jugador ha interactuado, el mensaje se desactiva
@@ -57,7 +57,7 @@ public class Pills : MonoBehaviour, II
         // Desactiva el objeto que se activó
         if (objectToActivate != null)
         {
-            objectToActivate.SetActive(false);
+            objectToActivate.SetActive(true);
         }
 
         // Destruye este objeto después del tiempo especificado

@@ -8,7 +8,7 @@ public class SceneChanger : MonoBehaviour, II
 
     public GameObject keyUI; // Reference to the UI image
 
-    private string sceneToLoad = "Start Menu"; // Cambia "NombreDeTuEscena" al nombre de la escena que deseas cargar
+    public string sceneToLoad = "Start Menu"; // Cambia "NombreDeTuEscena" al nombre de la escena que deseas cargar
 
     public string interactText = ""; // Cambia este texto según tus necesidades
 

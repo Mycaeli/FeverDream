@@ -8,13 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Start Menu.unity
     guid: ec7ee7a2581ef7f4186831271b849a85
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main Scene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/DIA1.unity
+    guid: 46a867b43285526418c0e6dd7d35cfb8
+  - enabled: 1
     path: Assets/Scenes/Maze.unity
     guid: 769bc204abf17794c837f22b5880e0da
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Second Act.unity
     guid: 11783a49ea4bf1c43984b8330b8dc775
   - enabled: 1
@@ -23,7 +26,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Noche3.unity
     guid: 7be724988754ea84287fa5bbb55e2c2e
-  - enabled: 1
-    path: Assets/Scenes/DIA1.unity
-    guid: 46a867b43285526418c0e6dd7d35cfb8
   m_configObjects: {}
