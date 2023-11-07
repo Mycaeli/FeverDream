@@ -11360,6 +11360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyUI: {fileID: 1163288833}
+  sceneToLoad: Start Menu
   interactText: DORMIR
 --- !u!65 &207159261
 BoxCollider:
@@ -78430,7 +78431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comPortNames:
-  - com8
+  - COM3
 --- !u!4 &1428947263
 Transform:
   m_ObjectHideFlags: 0

@@ -38971,7 +38971,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 85.90263
     y: 73.24325
-    width: 109.45947
+    width: 110.54056
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 1
@@ -83116,7 +83116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comPortNames:
-  - COM10
+  - COM3
   - COM5
   - COM3
   - COM8
@@ -98882,7 +98882,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1678529956
 Transform:
   m_ObjectHideFlags: 0
@@ -106021,7 +106021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1794830735
 Transform:
   m_ObjectHideFlags: 0
@@ -106071,10 +106071,10 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794830734}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1001 &1797937367

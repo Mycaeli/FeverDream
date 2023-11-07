@@ -17,12 +17,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Maze.unity
     guid: 769bc204abf17794c837f22b5880e0da
+  - enabled: 1
+    path: Assets/Scenes/DIA2.unity
+    guid: fcb99c325e32d3a44a0db6159a2c58c1
   - enabled: 0
     path: Assets/Scenes/Second Act.unity
     guid: 11783a49ea4bf1c43984b8330b8dc775
   - enabled: 1
     path: Assets/Scenes/Reversed.unity
     guid: 76b7e7282f5c9a844b816755beb0eb56
+  - enabled: 1
+    path: Assets/Scenes/DIA3_Oficial.unity
+    guid: 6017d66864b0f2a479731f11a7ae9316
   - enabled: 1
     path: Assets/Scenes/Noche3.unity
     guid: 7be724988754ea84287fa5bbb55e2c2e
