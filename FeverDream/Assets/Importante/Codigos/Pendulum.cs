@@ -20,6 +20,7 @@ public class Pendulum : MonoBehaviour
     private bool isCounting = false;
 
     public Door door;
+    public GameObject door2;
     private GameObject pickLock;
     public GameObject objectsToDisable;
     public GameObject objectsAnuncio;
@@ -27,6 +28,8 @@ public class Pendulum : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip audioClip;
     private bool opened;
+
+    private Animator animator; // Agregada referencia al Animator
 
     void Start()
     {
@@ -37,6 +40,8 @@ public class Pendulum : MonoBehaviour
 
         reverseRotation = true;
         opened = false;
+
+        animator = GetComponent<Animator>(); // Obtén la referencia al Animator al inicio
     }
 
     void Update()
@@ -74,10 +79,11 @@ public class Pendulum : MonoBehaviour
             }
         }
 
-        // Verifica si la tecla "R" fue presionada y activa el método DesactivarElementos
+        // Verifica si la tecla "R" fue presionada y activa el método DesactivarElementos y el Animator
         if (Input.GetKeyDown(KeyCode.R))
         {
             StartCoroutine(DesactivarElementos());
+            ActivateAnimator();
         }
     }
 
@@ -129,6 +135,7 @@ public class Pendulum : MonoBehaviour
             opened = true;
             objectsToDisable.SetActive(false);
             objectsAnuncio.SetActive(false);
+            door2.SetActive(false);
             door.operative = true;
         }
 
@@ -163,5 +170,15 @@ public class Pendulum : MonoBehaviour
         isCounting = false;
         timer = 0f;
     }
+
+    void ActivateAnimator()
+    {
+        // Activa el trigger "Activate" en el Animator
+        if (animator != null)
+        {
+            animator.SetTrigger("Activate");
+        }
+    }
 }
+
 

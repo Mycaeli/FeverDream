@@ -7,11 +7,12 @@ public class Key : MonoBehaviour, II
     public GameObject Aviso;
     public GameObject objectToDeactivate;
 
-    public Image keyUI; // Reference to the UI image
+    public Image keyUI;
+    public string texto = "tomar llave";// Reference to the UI image
 
     public string GetDescription()
     {
-        return "Tomar llave.";
+        return texto;
     }
 
     void Update()

@@ -7,6 +7,8 @@ public class Trigger : MonoBehaviour
     public GameObject objectToShowFor5Seconds;
     private bool isPlayerInsideTrigger = false;
 
+    private Coroutine disableCoroutine; // Almacena una referencia a la corrutina
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -22,17 +24,24 @@ public class Trigger : MonoBehaviour
         {
             isPlayerInsideTrigger = false;
             objectToActivate.SetActive(false);
+
+            // Detiene la corrutina si el jugador sale del trigger
+            if (disableCoroutine != null)
+            {
+                StopCoroutine(disableCoroutine);
+            }
         }
     }
 
     private void Update()
     {
-        if (isPlayerInsideTrigger && Input.GetKeyDown(KeyCode.E))
+        if (isPlayerInsideTrigger && Input.GetMouseButtonDown(0))
         {
             objectToActivate.SetActive(false);
             objectToShowFor5Seconds.SetActive(true);
 
-            StartCoroutine(DisableObjectsAfterDelay(2.0f));
+            // Inicia la corrutina y almacena una referencia para poder detenerla si es necesario
+            disableCoroutine = StartCoroutine(DisableObjectsAfterDelay(2.0f));
         }
     }
 
@@ -44,5 +53,3 @@ public class Trigger : MonoBehaviour
         objectToShowFor5Seconds.SetActive(false);
     }
 }
-
-
