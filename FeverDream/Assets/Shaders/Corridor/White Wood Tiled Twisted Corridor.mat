@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: White Plaster Twisted Corridor
+  m_Name: White Wood Tiled Twisted Corridor
   m_Shader: {fileID: -6465566751694194690, guid: bd9e5bcf8ff0b744dbbc7cd8b2355de9, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -21,19 +21,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AO:
-        m_Texture: {fileID: 2800000, guid: 0135b7362d8a45348b922ccbef4913a4, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Albedo:
-        m_Texture: {fileID: 2800000, guid: 2a726fd900310ee45ad5f6c0276b1fe9, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Metallic:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Albedo:
+        m_Texture: {fileID: 2800000, guid: e798e4200e463194887e03158035d110, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Metallic:
+        m_Texture: {fileID: 2800000, guid: 760ba694e1ba8344995771512b3cfbdc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 2800000, guid: 4e567c6edf97c3f449902e9a795dbfaf, type: 3}
+        m_Texture: {fileID: 2800000, guid: e6ec67fecb6a5ca46aeb5064e8face3a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture:
