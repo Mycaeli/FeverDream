@@ -84530,11 +84530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896ef004d0de9b64d877993f851c0d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comPortNames:
-  - COM3
-  - COM5
-  - COM3
-  - COM8
+  comPortNames: []
 --- !u!4 &1428947263
 Transform:
   m_ObjectHideFlags: 0
@@ -103971,8 +103967,8 @@ MonoBehaviour:
   indentLevel: 1
   storyText: 'Muy bien Charles de acuerdo
 
-    Ve a tu cuarto en este instante,
-    llamare al doctor para que venga y te mire.
+    Ve a tu cuarto en este instante, llamare
+    al doctor para que venga y te mire.
 
 '
   description: 
