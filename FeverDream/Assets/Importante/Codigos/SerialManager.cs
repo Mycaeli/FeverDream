@@ -10,6 +10,14 @@ public class SerialManager : MonoBehaviour
 
     private bool portDetected = false;
 
+    private string _com; // Campo privado para almacenar el valor de com
+
+    public string com
+    {
+        get { return _com; } // Getter público
+        set { _com = value; } // Setter público
+    }
+
     void Start()
     {
         if (!portDetected)
@@ -29,6 +37,10 @@ public class SerialManager : MonoBehaviour
                 {
                     puerto.Open();
                 }
+
+                // Guardar el valor de com en PlayerPrefs (o en otro lugar según tus necesidades)
+                _com = lastDetectedPort;
+                PlayerPrefs.SetString("com", lastDetectedPort);
             }
             else
             {
