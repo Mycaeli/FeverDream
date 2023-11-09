@@ -12,6 +12,7 @@ public class Phone : MonoBehaviour
     string CodeEaster = "4448300";
     string Nr = "";
     int NrIndex = 0;
+    public GameObject[] Fungus;
     string alpha;
     public Text UiText = null;
 
@@ -85,22 +86,27 @@ public class Phone : MonoBehaviour
         if (Nr == Code)
         {
             Debug.Log("Código correcto: " + Nr);
+            Fungus[0].SetActive(true);
         }
         else if (Nr == CodeInc)
         {
             Debug.Log("Código Incorrecto 1: " + Nr);
+            Fungus[1].SetActive(true);
         }
         else if (Nr == CodeInc2)
         {
             Debug.Log("Código Incorrecto 2: " + Nr);
+            Fungus[2].SetActive(true);
         }
         else if (Nr == CodeEaster)
         {
             Debug.Log("Código Sospechoso: " + Nr);
+            Fungus[3].SetActive(true);
         }
         else
         {
             Debug.Log("Número no apto: " + Nr);
+            Fungus[4].SetActive(false);
         }
     }
 
