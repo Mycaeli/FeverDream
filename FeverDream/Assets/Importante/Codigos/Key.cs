@@ -6,6 +6,7 @@ public class Key : MonoBehaviour, II
     public GameObject objectToActivate;
     public GameObject Aviso;
     public GameObject objectToDeactivate;
+    public AudioSource interactAudioSource;
 
     public Image keyUI;
     public string texto = "tomar llave";// Reference to the UI image
@@ -55,6 +56,7 @@ public class Key : MonoBehaviour, II
         }
 
         // Desactiva y luego destruye la llave de la escena después de 1 segundo
+        interactAudioSource.Play();
         gameObject.SetActive(false);
         Destroy(gameObject, 1f);
     }

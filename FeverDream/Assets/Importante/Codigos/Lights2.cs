@@ -12,6 +12,7 @@ public class Lights2 : MonoBehaviour, II
 
     private bool isObjectHidden = false;
     public bool hasBeenInteracted = false;
+    public AudioSource interactAudioSource;
 
     public Image flashlightUI; // Reference to the UI image
 
@@ -26,6 +27,7 @@ public class Lights2 : MonoBehaviour, II
         {
             isLightOn = !isLightOn;
             targetLight.enabled = isLightOn;
+            interactAudioSource.Play();
         }
 
         if (Input.GetMouseButtonDown(0))

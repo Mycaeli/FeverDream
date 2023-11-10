@@ -15,6 +15,7 @@ public class Phone : MonoBehaviour
     public GameObject[] Fungus;
     string alpha;
     public Text UiText = null;
+    public AudioSource interactAudioSource;
 
     private void Update()
     {
@@ -107,6 +108,7 @@ public class Phone : MonoBehaviour
         {
             Debug.Log("Número no apto: " + Nr);
             Fungus[4].SetActive(false);
+            interactAudioSource.Play();
         }
     }
 
