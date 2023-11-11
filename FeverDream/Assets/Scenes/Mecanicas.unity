@@ -3541,6 +3541,9 @@ MonoBehaviour:
   objectToActivate: {fileID: 344902953}
   Aviso: {fileID: 414292652}
   objectToDeactivate: {fileID: 467060058}
+  interactAudioSource: {fileID: 0}
+  keyUI: {fileID: 0}
+  texto: tomar llave
 --- !u!136 &467060060
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6392,11 +6395,11 @@ MonoBehaviour:
   - {fileID: 1391741033}
   - {fileID: 522541836}
   - {fileID: 1053015724}
-  lamp: {fileID: 0}
   areLightsOn: 0
   texto1: Apagar
   texto2: Encender
-  sharedLightMaterial: {fileID: 0}
+  lampMaterial: {fileID: 0}
+  interactAudioSource: {fileID: 0}
 --- !u!136 &1012095733
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6511,11 +6514,11 @@ MonoBehaviour:
   targetLights:
   - {fileID: 1391741033}
   - {fileID: 522541836}
-  lamp: {fileID: 0}
   areLightsOn: 1
   texto1: Apagar
   texto2: Encender
-  sharedLightMaterial: {fileID: 0}
+  lampMaterial: {fileID: 0}
+  interactAudioSource: {fileID: 0}
 --- !u!136 &1020243054
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6792,6 +6795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowdownFactor: 0.5
   slowdownDuration: 2
+  canvas: {fileID: 0}
 --- !u!65 &1036947487
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8496,7 +8500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objetoAActivarDesactivar: {fileID: 2034486593}
-  objeto1Rigidbody: {fileID: 1672104253}
+  correspondingObject: {fileID: 0}
 --- !u!54 &1245329443
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9246,6 +9250,9 @@ MonoBehaviour:
   objectToActivate: {fileID: 385792090}
   Aviso: {fileID: 1727298835}
   objectToDeactivate: {fileID: 1334410392}
+  interactAudioSource: {fileID: 0}
+  keyUI: {fileID: 0}
+  texto: tomar llave
 --- !u!136 &1334410394
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11687,6 +11694,9 @@ MonoBehaviour:
   objectToActivate: {fileID: 975313774}
   Aviso: {fileID: 344902953}
   objectToDeactivate: {fileID: 414292652}
+  interactAudioSource: {fileID: 0}
+  keyUI: {fileID: 0}
+  texto: tomar llave
 --- !u!136 &1711259649
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12162,7 +12172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896ef004d0de9b64d877993f851c0d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  COM: COM4
+  comPortNames:
+  - COM8
 --- !u!4 &1744762570
 Transform:
   m_ObjectHideFlags: 0
@@ -13695,6 +13706,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetoAActivarDesactivar: {fileID: 1564870237}
   objeto1Rigidbody: {fileID: 933702844}
+  flowchart: {fileID: 0}
+  cable: {fileID: 0}
 --- !u!1 &1968113350 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6905609870639353253, guid: bea0f3db3026cac4e8364f4428f9fb5d, type: 3}
@@ -13869,7 +13882,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f60e61e5db93a4e9a8468e6c0edd98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Fungus: []
   UiText: {fileID: 156793827}
+  interactAudioSource: {fileID: 0}
+--- !u!1 &1989357746
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1989357748}
+  - component: {fileID: 1989357747}
+  m_Layer: 0
+  m_Name: _FungusState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1989357747
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989357746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedFlowchart: {fileID: 0}
+--- !u!4 &1989357748
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989357746}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 39
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1999539058
 GameObject:
   m_ObjectHideFlags: 0
@@ -14631,6 +14691,9 @@ MonoBehaviour:
   isLightOn: 0
   texto1: Encender Linterna
   texto2: Encender
+  hasBeenInteracted: 0
+  interactAudioSource: {fileID: 0}
+  flashlightUI: {fileID: 0}
 --- !u!1 &2137862405 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8491788222853980457, guid: bea0f3db3026cac4e8364f4428f9fb5d, type: 3}

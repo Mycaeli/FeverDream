@@ -5383,6 +5383,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce6fe1c5fba289428f1e540517affc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  input: 
+  serialManager: {fileID: 0}
 --- !u!4 &408102595 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400292, guid: 961cb24356970a84796794993cec5f52, type: 3}
@@ -20015,8 +20017,8 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1842769367}
-        m_TargetAssemblyTypeName: InputPort, Assembly-CSharp
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SerialManager, Assembly-CSharp
         m_MethodName: ReadStringInput
         m_Mode: 0
         m_Arguments:
@@ -24617,7 +24619,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1842769366}
   - component: {fileID: 1842769365}
-  - component: {fileID: 1842769367}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -24736,18 +24737,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1842769367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1842769364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dce6fe1c5fba289428f1e540517affc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1846571916
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,6 +30,9 @@ public class Trigger : MonoBehaviour
             {
                 StopCoroutine(disableCoroutine);
             }
+
+            // Desactiva ambos objetos
+            objectToShowFor5Seconds.SetActive(false);
         }
     }
 
@@ -49,7 +52,12 @@ public class Trigger : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        objectToActivate.SetActive(true);
-        objectToShowFor5Seconds.SetActive(false);
+        // Asegúrate de que el jugador aún esté dentro del trigger antes de desactivar los objetos
+        if (isPlayerInsideTrigger)
+        {
+            objectToActivate.SetActive(true);
+            objectToShowFor5Seconds.SetActive(false);
+        }
     }
 }
+
