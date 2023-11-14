@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Reflection;
 
 public class ZonaCambioEscena_Noche_3 : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class ZonaCambioEscena_Noche_3 : MonoBehaviour
         {
             audioSource.Play();
 
-            StartCoroutine(LoadSceneAfterDelay(0.5f)); // Carga la siguiente escena después de medio segundo.
+            StartCoroutine(LoadSceneAfterDelay(2.5f)); // Carga la siguiente escena después de 10 sec.
         }
     }
 
