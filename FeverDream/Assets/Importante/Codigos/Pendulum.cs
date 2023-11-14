@@ -20,7 +20,7 @@ public class Pendulum : MonoBehaviour
     private bool isCounting = false;
 
     public Door door;
-    public GameObject door2;
+    //public GameObject door2;
     private GameObject pickLock;
     public GameObject objectsToDisable;
     public GameObject objectsAnuncio;
@@ -135,7 +135,7 @@ public class Pendulum : MonoBehaviour
             opened = true;
             objectsToDisable.SetActive(false);
             objectsAnuncio.SetActive(false);
-            door2.SetActive(false);
+            //door2.SetActive(false);
             door.operative = true;
         }
 
