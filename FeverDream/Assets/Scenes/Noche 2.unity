@@ -18893,7 +18893,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 569787133}
   selectedCommands:
-  - {fileID: 569787139}
+  - {fileID: 569787131}
   variables: []
   description: 
   stepPause: 0
@@ -18919,16 +18919,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2
   indentLevel: 0
-  storyText: '{w=1}...'
+  storyText: '{w=1}...{w=1}'
   description: 
   character: {fileID: 1800041819}
-  portrait: {fileID: 21300000, guid: 0a66e979d73e05f47860d889addaad0d, type: 3}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
   extendPrevious: 0
-  fadeWhenDone: 0
-  waitForClick: 1
+  fadeWhenDone: 1
+  waitForClick: 0
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
@@ -19073,10 +19073,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 7
   indentLevel: 0
-  storyText: "Perd\xF3name, tu...{w=1} tu{w=1} sufrimiento...{w=1} no es justo."
+  storyText: "{w=1}Perd\xF3name, tu...{w=1} tu{w=1} sufrimiento...{w=1} no es justo."
   description: 
   character: {fileID: 1800041819}
-  portrait: {fileID: 21300000, guid: 0a66e979d73e05f47860d889addaad0d, type: 3}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -19100,16 +19100,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 6
   indentLevel: 0
-  storyText: S..{w=1}sse{w=1} pa..{w=1}parece{w=1} a...{w=1} a...{w=1}
+  storyText: S..{w=1}sse{w=1} pa..{w=1}parece{w=1} a...{w=1} a...{w=2}
   description: 
   character: {fileID: 1800041819}
-  portrait: {fileID: 21300000, guid: 0a66e979d73e05f47860d889addaad0d, type: 3}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
   extendPrevious: 0
-  fadeWhenDone: 0
-  waitForClick: 1
+  fadeWhenDone: 1
+  waitForClick: 0
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
@@ -24807,7 +24807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 0}
+  selectedFlowchart: {fileID: 569787130}
 --- !u!4 &727099484
 Transform:
   m_ObjectHideFlags: 1
@@ -39993,7 +39993,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1168304863}
   selectedCommands:
-  - {fileID: 1168304869}
+  - {fileID: 1168304861}
   variables: []
   description: 
   stepPause: 0
@@ -55913,11 +55913,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 405.2911, y: 36.253906}
+  scrollPos: {x: 324.5022, y: 90.7}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 323.75
-  zoom: 0.9100001
+  zoom: 1
   scrollViewRect:
     serializedVersion: 2
     x: 0
@@ -55927,7 +55927,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1675296873}
   selectedCommands:
-  - {fileID: 1675296884}
+  - {fileID: 1675296871}
   variables: []
   description: 
   stepPause: 0
@@ -55997,7 +55997,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 59.1978
     y: 49
-    width: 94.83516
+    width: 97.2
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -56113,7 +56113,7 @@ MonoBehaviour:
   showAlways: 1
   showCount: 1
   extendPrevious: 0
-  fadeWhenDone: 0
+  fadeWhenDone: 1
   waitForClick: 0
   stopVoiceover: 1
   waitForVO: 0
@@ -56169,7 +56169,7 @@ MonoBehaviour:
   showAlways: 1
   showCount: 1
   extendPrevious: 0
-  fadeWhenDone: 0
+  fadeWhenDone: 1
   waitForClick: 0
   stopVoiceover: 1
   waitForVO: 0
@@ -56239,7 +56239,7 @@ BoxCollider:
   m_Center: {x: 0.05910492, y: 0.9537623, z: 0.09696698}
 --- !u!114 &1675296884
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -56267,7 +56267,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1675296885
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
