@@ -6,16 +6,16 @@ using System.Reflection;
 public class ZonaCambioEscena_Noche_3 : MonoBehaviour
 {
     public int escenaSiguienteIndex;
+    public GameObject finTxt;
     public AudioClip audioClip;
     private AudioSource audioSource;
-    public GameObject finTxt;
 
     private void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = audioClip;
-        audioSource.playOnAwake = false;
         finTxt.SetActive(false);
+        audioSource.playOnAwake = false;
     }
 
     private void OnTriggerEnter(Collider other)

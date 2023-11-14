@@ -85,7 +85,7 @@ MonoBehaviour:
     lockCursor: 1
   m_UseFovKick: 1
   m_FovKick:
-    Camera: {fileID: 0}
+    Camera: {fileID: 2000000}
     originalFov: 0
     FOVIncrease: 3
     TimeToIncrease: 1
