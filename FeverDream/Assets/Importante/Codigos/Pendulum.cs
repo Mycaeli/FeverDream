@@ -80,11 +80,11 @@ public class Pendulum : MonoBehaviour
         }
 
         // Verifica si la tecla "R" fue presionada y activa el método DesactivarElementos y el Animator
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            StartCoroutine(DesactivarElementos());
-            ActivateAnimator();
-        }
+        //if (Input.GetKeyDown(KeyCode.R))
+      //  {
+        //    StartCoroutine(DesactivarElementos());
+        //    ActivateAnimator();
+       // }
     }
 
     private void CambiarColorDeObjetosVerde()

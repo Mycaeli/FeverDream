@@ -72,11 +72,11 @@ public class Pendulum2 : MonoBehaviour
         }
 
         // Verifica si la tecla "R" está siendo presionada y activa el método DesactivarElementos
-        if (Input.GetKey(KeyCode.R))
-        {
-            StartCoroutine(DesactivarElementos());
-            ActivateAnimator();
-        }
+        //if (Input.GetKey(KeyCode.R))
+       // {
+        //    StartCoroutine(DesactivarElementos());
+       //     ActivateAnimator();
+       // }
     }
 
 
