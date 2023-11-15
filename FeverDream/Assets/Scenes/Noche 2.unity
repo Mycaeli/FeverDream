@@ -742,6 +742,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+--- !u!114 &12393026 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+  m_PrefabInstance: {fileID: 12393025}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ec5cf00ca181d45a42ba1870e148c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &12953404
 GameObject:
   m_ObjectHideFlags: 0
@@ -8283,7 +8294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickMode: 0
   nextClickDelay: 3
-  advanceKey: 13
+  advanceKey: 118
   cancelEnabled: 1
   ignoreMenuClicks: 1
 --- !u!82 &234103577
@@ -19176,7 +19187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 314.5022, y: 83.09999}
+  scrollPos: {x: 176.8022, y: 95.5}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 481.8
@@ -19190,7 +19201,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 569787133}
   selectedCommands:
-  - {fileID: 569787131}
+  - {fileID: 569787134}
   variables: []
   description: 
   stepPause: 0
@@ -19260,7 +19271,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 60.1978
     y: 50
-    width: 97.2
+    width: 96
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -19290,7 +19301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 5
   indentLevel: 0
-  firstPersonController: {fileID: 0}
+  firstPersonController: {fileID: 12393026}
   newWalkSpeed: 2
   newRunSpeed: 2.5
 --- !u!114 &569787135
@@ -19322,7 +19333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 4
   indentLevel: 0
-  firstPersonController: {fileID: 0}
+  firstPersonController: {fileID: 12393026}
   newWalkSpeed: 0
   newRunSpeed: 0
 --- !u!114 &569787137
@@ -26264,7 +26275,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -60, y: 104}
+  m_AnchoredPosition: {x: 31, y: 104}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &761061010
@@ -26343,7 +26354,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8626136d8b560084b937afb005eca0f3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62b025cc7e90cbe4b87819dae9f2f096, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -62237,7 +62248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -60, y: 106}
+  m_AnchoredPosition: {x: 31.00003, y: 106}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1871856909
@@ -62316,7 +62327,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8626136d8b560084b937afb005eca0f3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62b025cc7e90cbe4b87819dae9f2f096, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -70151,7 +70162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickMode: 0
   nextClickDelay: 3
-  advanceKey: 13
+  advanceKey: 118
   cancelEnabled: 1
   ignoreMenuClicks: 1
 --- !u!82 &2134685043

@@ -16937,7 +16937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickMode: 0
   nextClickDelay: 3
-  advanceKey: 13
+  advanceKey: 118
   cancelEnabled: 1
   ignoreMenuClicks: 1
 --- !u!82 &810283952
@@ -22887,7 +22887,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 102
     y: 107
-    width: 86.8
+    width: 86
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -22932,7 +22932,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 236.19781
     y: 99.8022
-    width: 107.6
+    width: 106
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -34968,7 +34968,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -60, y: 106}
+  m_AnchoredPosition: {x: 3, y: 106}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1612462912
@@ -35047,7 +35047,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8626136d8b560084b937afb005eca0f3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62b025cc7e90cbe4b87819dae9f2f096, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -43522,7 +43522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickMode: 0
   nextClickDelay: 3
-  advanceKey: 13
+  advanceKey: 118
   cancelEnabled: 1
   ignoreMenuClicks: 1
 --- !u!82 &1996245916
@@ -44908,7 +44908,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -60, y: 104}
+  m_AnchoredPosition: {x: 3.000084, y: 104}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2027554780
@@ -44987,7 +44987,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8626136d8b560084b937afb005eca0f3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62b025cc7e90cbe4b87819dae9f2f096, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
