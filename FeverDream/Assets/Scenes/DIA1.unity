@@ -7527,7 +7527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &110365061
 Transform:
   m_ObjectHideFlags: 0
@@ -16469,7 +16469,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1568190332219503365, guid: a3aee865a7034bf43b4e1fdbae730f0d, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1568190332219503365, guid: a3aee865a7034bf43b4e1fdbae730f0d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -125820,9 +125820,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f60e61e5db93a4e9a8468e6c0edd98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fungus: []
-  UiText: {fileID: 1337644539}
-  interactAudioSource: {fileID: 0}
+  codeCorrecto: 3481
+  codeIncorrecto1: 4444
+  codeIncorrecto2: 3053
+  codeEasterEgg: 4448
+  maxLongitud: 4
+  uiText: {fileID: 0}
+  audioError: {fileID: 0}
+  fungus: []
 --- !u!114 &2013581075
 MonoBehaviour:
   m_ObjectHideFlags: 0

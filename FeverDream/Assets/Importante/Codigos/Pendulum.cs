@@ -2,9 +2,12 @@ using MoonSharp.Interpreter;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Pendulum : MonoBehaviour
 {
+    public TMP_Text timerText;
+
     public Transform center;
     public float distance = 5f;
     public float rotationSpeed = 30f;
@@ -78,6 +81,27 @@ public class Pendulum : MonoBehaviour
                 StartCoroutine(DesactivarDespuesDeEsperar());
             }
         }
+
+        // Mostrar el temporizador si está contando
+        if (isCounting)
+        {
+            timer += Time.deltaTime;
+            if (timerText != null)
+                timerText.text = $"{timer:F1} / 5.0"; // Muestra con un decimal
+
+            if (timer >= 5f)
+            {
+                CambiarColorDeObjetosVerde();
+                StartCoroutine(DesactivarElementos());
+            }
+        }
+        else
+        {
+            // Si no está contando, mostrar 0
+            if (timerText != null)
+                timerText.text = "0.0 / 5.0";
+        }
+
 
         // Verifica si la tecla "R" fue presionada y activa el método DesactivarElementos y el Animator
         if (Input.GetKeyDown(KeyCode.R))
