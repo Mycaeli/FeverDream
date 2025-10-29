@@ -8230,7 +8230,7 @@ MonoBehaviour:
   serialManager: {fileID: 581528143}
   SerialCode: {fileID: 1882075182}
   UIPort: {fileID: 1507456243}
-  IsTextOnly: 1
+  IsTextOnly: 0
   tiempoActualizacion: 2
 --- !u!114 &581528143
 MonoBehaviour:

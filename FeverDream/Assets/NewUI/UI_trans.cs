@@ -15,6 +15,9 @@ public class UI_trans : MonoBehaviour
 
     public void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        animator.SetTrigger("MoveOut");
         Menu.SetActive(true);
         controls.SetActive(false);
     }

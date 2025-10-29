@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
@@ -7,27 +7,34 @@ public class ToggleGravity2 : MonoBehaviour
 {
     private bool isGravityEnabled = false;
     public GameObject objetoAActivarDesactivar;
-    public Rigidbody objeto1Rigidbody; // Referencia al Rigidbody del objeto 1
+    public Rigidbody objeto1Rigidbody;
     private bool canInteract = false;
-    public GameObject flowchart; // Reference to the Fungus flowchart game object
+    public GameObject flowchart;
     public GameObject cable;
+
+    private Transform playerTransform;
+    public float maxInteractionDistance = 3f;
 
     private void Start()
     {
-        // Asegúrate de que objeto1Rigidbody esté asignado en el Inspector.
         if (objeto1Rigidbody == null)
         {
             Debug.LogError("No se ha asignado el Rigidbody del objeto 1 en el Inspector.");
-            enabled = false; // Deshabilita el script si no se asigna el Rigidbody.
+            enabled = false;
+            return;
         }
+
+        if (objetoAActivarDesactivar != null)
+            objetoAActivarDesactivar.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            objetoAActivarDesactivar.SetActive(true);
-            canInteract = true; // Allow interaction when the player is near.
+            playerTransform = other.transform;
+            MostrarUI(true);
+            canInteract = true;
         }
     }
 
@@ -35,50 +42,71 @@ public class ToggleGravity2 : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            objetoAActivarDesactivar.SetActive(false);
-            canInteract = false; // Prevent interaction when the player leaves.
+            OcultarUI();
+            canInteract = false;
+            playerTransform = null;
         }
     }
 
     private void Update()
     {
-        if (canInteract)
+        // Oculta la UI si el jugador se aleja demasiado
+        if (canInteract && playerTransform != null)
         {
-            if (isGravityEnabled && Input.GetKeyDown(KeyCode.E))
+            float distance = Vector3.Distance(transform.position, playerTransform.position);
+            if (distance > maxInteractionDistance)
+            {
+                OcultarUI();
+                canInteract = false;
+                playerTransform = null;
+                return;
+            }
+        }
+
+        // ðŸ”¹ InteracciÃ³n con clic izquierdo
+        if (canInteract && Input.GetMouseButtonDown(0))
+        {
+            if (isGravityEnabled)
             {
                 objeto1Rigidbody.isKinematic = true;
                 objeto1Rigidbody.useGravity = false;
                 isGravityEnabled = false;
 
-                // Desplaza el objeto hacia abajo 20 unidades en el eje Y.
                 gameObject.SetActive(false);
                 Destroy(gameObject, 1f);
 
-                if (cable.CompareTag("Cable"))
-                {
+                if (cable != null && cable.CompareTag("Cable"))
                     TriggerFungusBlock();
-                }
             }
-            else if (!isGravityEnabled && Input.GetKeyDown(KeyCode.E))
+            else
             {
                 objeto1Rigidbody.isKinematic = false;
                 objeto1Rigidbody.useGravity = true;
                 isGravityEnabled = true;
 
-                if (cable.CompareTag("Cable"))
-                {
+                if (cable != null && cable.CompareTag("Cable"))
                     TriggerFungusBlock();
-                }
             }
         }
     }
 
+    private void MostrarUI(bool estado)
+    {
+        if (objetoAActivarDesactivar != null)
+            objetoAActivarDesactivar.SetActive(estado);
+    }
+
+    private void OcultarUI()
+    {
+        if (objetoAActivarDesactivar != null)
+            objetoAActivarDesactivar.SetActive(false);
+    }
+
     private void TriggerFungusBlock()
     {
-        // Set the flowchart game object to active
-        flowchart.SetActive(true);
+        if (flowchart != null)
+            flowchart.SetActive(true);
     }
 }
-
 
 

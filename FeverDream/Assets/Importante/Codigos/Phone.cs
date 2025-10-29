@@ -1,122 +1,109 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Phone : MonoBehaviour
 {
-    string Code = "3481000";
-    string CodeInc = "44442244";
-    string CodeInc2 = "30537700";
-    string CodeEaster = "4448300";
-    string Nr = "";
-    int NrIndex = 0;
-    public GameObject[] Fungus;
-    string alpha;
-    public Text UiText = null;
-    public AudioSource interactAudioSource;
+    [Header("Códigos válidos")]
+    [SerializeField] private string codeCorrecto = "3481";
+    [SerializeField] private string codeIncorrecto1 = "4444";
+    [SerializeField] private string codeIncorrecto2 = "3053";
+    [SerializeField] private string codeEasterEgg = "4448";
 
-    private void Update()
+    [Header("Configuración")]
+    [SerializeField] private int maxLongitud = 4; // Límite de dígitos
+    [SerializeField] private Text uiText;
+    [SerializeField] private AudioSource audioError;
+    [SerializeField] private GameObject[] fungus; // 0: correcto, 1: incorrecto1, 2: incorrecto2, 3: easter, 4: error genérico
+
+    private string codigoActual = "";
+
+    void Update()
     {
-        // Captura la entrada del teclado num�rico
-        if (Input.GetKeyDown(KeyCode.Alpha0))
+        // Detectar teclas del 0 al 9
+        for (int i = 0; i <= 9; i++)
         {
-            CodeFunction("0");
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            CodeFunction("1");
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            CodeFunction("2");
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            CodeFunction("3");
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            CodeFunction("4");
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            CodeFunction("5");
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            CodeFunction("6");
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            CodeFunction("7");
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha8))
-        {
-            CodeFunction("8");
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha9))
-        {
-            CodeFunction("9");
+            if (Input.GetKeyDown(KeyCode.Alpha0 + i))
+            {
+                AgregarNumero(i.ToString());
+            }
         }
 
-        // Captura la tecla "Enter"
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            Enter();
-        }
-
-        // Captura la tecla "Backspace"
+        // Borrar con Backspace
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            Delete();
+            BorrarCodigo();
         }
     }
 
-    public void CodeFunction(string Numbers)
+    public void AgregarNumero(string numero)
     {
-        NrIndex++;
-        Nr = Nr + Numbers;
-        UiText.text = Nr; // Actualiza el texto en el objeto UiText
-        Debug.Log("N�mero oprimido: " + Numbers); // Muestra el n�mero en la consola
+        if (codigoActual.Length >= maxLongitud)
+            return;
+
+        codigoActual += numero;
+        uiText.text = codigoActual;
+        Debug.Log($"Número ingresado: {numero}");
+
+        // Si se alcanzó la longitud máxima, validar automáticamente
+        if (codigoActual.Length == maxLongitud)
+        {
+            ValidarCodigo();
+        }
     }
 
-    public void Enter()
+    public void ValidarCodigo()
     {
-        if (Nr == Code)
+        // Desactivar todos los Fungus antes de activar el correspondiente
+        foreach (GameObject f in fungus)
         {
-            Debug.Log("C�digo correcto: " + Nr);
-            Fungus[0].SetActive(true);
+            if (f != null) f.SetActive(false);
         }
-        else if (Nr == CodeInc)
+
+        // Comparar códigos
+        if (codigoActual == codeCorrecto)
         {
-            Debug.Log("C�digo Incorrecto 1: " + Nr);
-            Fungus[1].SetActive(true);
+            Debug.Log("✅ Código correcto");
+            ActivarFungus(0);
         }
-        else if (Nr == CodeInc2)
+        else if (codigoActual == codeIncorrecto1)
         {
-            Debug.Log("C�digo Incorrecto 2: " + Nr);
-            Fungus[2].SetActive(true);
+            Debug.Log("❌ Código incorrecto 1");
+            ActivarFungus(1);
         }
-        else if (Nr == CodeEaster)
+        else if (codigoActual == codeIncorrecto2)
         {
-            Debug.Log("C�digo Sospechoso: " + Nr);
-            Fungus[3].SetActive(true);
+            Debug.Log("❌ Código incorrecto 2");
+            ActivarFungus(2);
+        }
+        else if (codigoActual == codeEasterEgg)
+        {
+            Debug.Log("🎉 Código especial encontrado!");
+            ActivarFungus(3);
         }
         else
         {
-            Debug.Log("N�mero no apto: " + Nr);
-            Fungus[4].SetActive(false);
-            interactAudioSource.Play();
+            Debug.Log("⚠️ Código no válido");
+            ActivarFungus(4);
+            if (audioError != null)
+                audioError.Play();
         }
+
+        // Reiniciar código y texto después de validar
+        codigoActual = "";
+        uiText.text = "";
     }
 
-    public void Delete()
+    private void ActivarFungus(int index)
     {
-        NrIndex++;
-        Nr = "";
-        UiText.text = Nr; // Limpia el texto en el objeto UiText
+        if (index >= 0 && index < fungus.Length && fungus[index] != null)
+            fungus[index].SetActive(true);
+    }
+
+    public void BorrarCodigo()
+    {
+        codigoActual = "";
+        uiText.text = "";
+        Debug.Log("🧹 Código borrado");
     }
 }
 
