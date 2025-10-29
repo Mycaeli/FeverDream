@@ -1,52 +1,132 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System.IO.Ports;
+using System.Collections;
+using System.Linq;
+using System;
 
 public class SerialManager : MonoBehaviour
 {
     public static SerialPort puerto;
-    public List<string> comPortNames = new List<string>(); // List of COM port names
+    public static string puertoDetectado = "";
 
-    private bool portDetected = false;
+    [Header("Configuración de conexión")]
+    public int baudRate = 9600;
+    public float tiempoEspera = 1.0f; // Tiempo máximo para leer datos
+    public float intervaloReconexion = 2.0f; // Segundos entre reintentos
 
-    private string _com; // Campo privado para almacenar el valor de com
-
-    public string com
-    {
-        get { return _com; } // Getter p�blico
-        set { _com = value; } // Setter p�blico
-    }
+    private bool buscando = false;
+    private bool conectado = false;
 
     void Start()
     {
-        if (!portDetected)
+        StartCoroutine(GestionConexion());
+    }
+
+    private IEnumerator GestionConexion()
+    {
+        while (true)
         {
-            // Check if the comPortNames list is not empty
-            if (comPortNames.Count > 0)
+            if (!conectado)
             {
-                // Use the first available COM port if any exist in the list
-                string lastDetectedPort = comPortNames[0];
-                portDetected = true;
-
-                // Configure and open the selected port
-                puerto = new SerialPort(lastDetectedPort, 9600);
-                puerto.ReadTimeout = 1;
-
-                if (!puerto.IsOpen)
-                {
-                    puerto.Open();
-                }
-
-                // Guardar el valor de com en PlayerPrefs (o en otro lugar seg�n tus necesidades)
-                _com = lastDetectedPort;
-                PlayerPrefs.SetString("com", lastDetectedPort);
+                yield return StartCoroutine(DetectarPuertos());
             }
             else
             {
-                Debug.LogWarning("No COM ports available.");
+                // Verificar si el puerto sigue abierto
+                if (puerto == null || !puerto.IsOpen)
+                {
+                    Debug.LogWarning("⚠️ Conexión con Arduino perdida. Intentando reconectar...");
+                    conectado = false;
+                }
+                else
+                {
+                    try
+                    {
+                        // Leer datos para confirmar conexión
+                        string data = puerto.ReadExisting();
+                        if (data.Length == 0)
+                        {
+                            // No hay datos, pero el puerto sigue estable
+                        }
+                    }
+                    catch
+                    {
+                        Debug.LogWarning("⚠️ Error al leer desde el puerto. Intentando reconectar...");
+                        conectado = false;
+                        try { puerto.Close(); } catch { }
+                    }
+                }
             }
+
+            yield return new WaitForSeconds(intervaloReconexion);
         }
+    }
+
+    private IEnumerator DetectarPuertos()
+    {
+        if (buscando) yield break;
+        buscando = true;
+
+        string[] puertosDisponibles = SerialPort.GetPortNames();
+
+        if (puertosDisponibles.Length == 0)
+        {
+            Debug.Log("🚫 No se encontraron puertos COM disponibles.");
+            buscando = false;
+            yield break;
+        }
+
+        Debug.Log("🔍 Buscando Arduino en los siguientes puertos:");
+        foreach (string port in puertosDisponibles)
+            Debug.Log("  • " + port);
+
+        foreach (string port in puertosDisponibles)
+        {
+            SerialPort testPort = new SerialPort(port, baudRate)
+            {
+                ReadTimeout = 200
+            };
+
+            try
+            {
+                testPort.Open();
+            }
+            catch
+            {
+                continue; // pasa al siguiente puerto
+            }
+
+            yield return new WaitForSeconds(2f); // esperar a que Arduino se reinicie
+
+            float startTime = Time.time;
+            while (Time.time - startTime < tiempoEspera)
+            {
+                string data = "";
+                try
+                {
+                    data = testPort.ReadLine().Trim();
+                }
+                catch { }
+
+                if (!string.IsNullOrEmpty(data) && data.All(char.IsDigit))
+                {
+                    Debug.Log($"✅ Arduino detectado en {port}, dato leído: {data}");
+                    puerto = testPort;
+                    puertoDetectado = port;
+                    conectado = true;
+                    buscando = false;
+                    yield break;
+                }
+
+                yield return null;
+            }
+
+            // Cierra si no se detectó nada válido
+            testPort.Close();
+        }
+
+        Debug.Log("🚫 No se detectó ningún Arduino activo.");
+        buscando = false;
     }
 
     void OnApplicationQuit()
@@ -54,6 +134,7 @@ public class SerialManager : MonoBehaviour
         if (puerto != null && puerto.IsOpen)
         {
             puerto.Close();
+            Debug.Log("🔒 Puerto cerrado correctamente.");
         }
     }
 }
