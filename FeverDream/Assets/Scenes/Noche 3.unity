@@ -39285,7 +39285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comPortNames:
-  - COM4
+  - COM3
 --- !u!4 &1428947263
 Transform:
   m_ObjectHideFlags: 0

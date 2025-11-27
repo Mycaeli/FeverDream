@@ -85213,7 +85213,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 326
     y: 140
-    width: 73
+    width: 74
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -89659,7 +89659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comPortNames:
-  - COM4
+  - COM3
 --- !u!4 &1428947263
 Transform:
   m_ObjectHideFlags: 0
